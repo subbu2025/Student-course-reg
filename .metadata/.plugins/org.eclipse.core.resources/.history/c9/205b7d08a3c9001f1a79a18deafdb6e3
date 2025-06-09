@@ -1,0 +1,25 @@
+package com.example.demo;
+
+public class MainServ {
+	private PwdSer passwd;
+	private IuserDao user;
+	private Emailser email;
+	
+	@Autowired
+	public MainServ(PwdSer passwd, IuserDao user, Emailser email) {
+		super();
+		this.passwd = passwd;
+		this.user = user;
+		this.email = email;
+	}
+
+
+	
+	public  void mainRegister(String name ,String email,String paswd)
+	{
+		String pass=passwd.encry(pwd);
+		boolean use=user.userName(name,gender);
+		boolean sent=email.send(from, to, sub);
+	}
+
+}

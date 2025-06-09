@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function checkStock() {
+            let productId = document.getElementById("productId").value;
+            window.location.href = `/inventory/` + productId;
+        }
+
+        function deleteStock(productId) {
+            if (confirm("Are you sure you want to delete this stock?")) {
+                window.location.href = `/inventory/delete/` + productId;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="text-center">Inventory Management</h2>
+        
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <label for="productId" class="form-label">Enter Product ID:</label>
+                <input type="text" id="productId" class="form-control" placeholder="Enter Product ID">
+                <button class="btn btn-primary mt-2" onclick="checkStock()">Check Stock</button>
+            </div>
+        </div>
+
+        <hr>
+        <h4>Update Inventory</h4>
+        <form th:action="@{/inventory/update}" method="post">
+            <div class="mb-3">
+                <label class="form-label">Product ID</label>
+                <input type="text" name="productId" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Stock</label>
+                <input type="number" name="stock" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-success">Update Stock</button>
+        </form>
+
+        <hr>
+        <h4>Inventory List</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Stock</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="inventory : ${inventoryList}">
+                    <td th:text="${inventory.productId}"></td>
+                    <td th:text="${inventory.stock}"></td>
+                    <td>
+                        <button class="btn btn-info" th:onclick="|window.location.href='/inventory/' + ${inventory.productId}|">View</button>
+                        <button class="btn btn-danger" th:onclick="|deleteStock(${inventory.productId})|">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

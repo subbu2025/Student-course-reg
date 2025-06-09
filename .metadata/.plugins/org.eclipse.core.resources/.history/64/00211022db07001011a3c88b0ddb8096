@@ -1,0 +1,5 @@
+package com.price.demo;
+
+public interface PcostClient {
+
+}

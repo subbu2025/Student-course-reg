@@ -1,0 +1,11 @@
+package com.example.demo;
+
+public class IuserDao implements UserDa0 {
+
+	@Override
+	public boolean userName(String Name, String Gender) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

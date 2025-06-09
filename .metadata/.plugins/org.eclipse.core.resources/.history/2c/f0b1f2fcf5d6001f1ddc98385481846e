@@ -1,0 +1,13 @@
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+@Service
+public class Services {
+	private Rrepo repi;
+@Autowired
+	public void setRepi(Rrepo repi) {
+		this.repi = repi;
+	}
+
+}

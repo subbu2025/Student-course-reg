@@ -1,0 +1,5 @@
+package com.KSRIT.demo.CourseRepository.java;
+
+public interface CourseRepository {
+
+}

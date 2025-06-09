@@ -1,0 +1,29 @@
+package com.KSR.IT.demo;
+
+public class ServiceImplcls implements ServiceInterf {
+
+	@Override
+	public String Upsert(Student stu) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer GetStuById(Integer sid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer UpdateById(Integer sid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer DeleteById(Integer sid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Basic HTML Structure</title>
+    </head>
+    <body>
+        
+       <h1> <p th:text="${msg}"> welcome to this page</p></h1>
+    </body>
+</html>

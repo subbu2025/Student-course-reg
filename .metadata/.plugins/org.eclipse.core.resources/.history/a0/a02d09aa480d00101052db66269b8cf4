@@ -1,0 +1,39 @@
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Locale.Category;
+
+@Controller
+@RequestMapping("/categories")
+public class CatageoryController {  // Fixed name
+private final CategorySer categoryService;
+
+    CatageoryController(CategorySer categoryService) {
+        this.categoryService = categoryService;
+    }  // Fixed service name
+
+    @GetMapping
+    public String getAllCategories(Model model) {
+        List<Catageory> categories = categoryService.getAllCatageories(); // Fixed method name
+        model.addAttribute("categories", categories);
+        model.addAttribute("category", new Catageory()); // Fixed class name
+        return "categories";
+    }
+
+    @PostMapping
+    public String addOrUpdateCategory(@ModelAttribute Category category) {  // Fixed class name
+        categoryService.addOrUpdateCategory(category);  // Fixed method name
+        return "redirect:/categories";
+    }
+
+    @DeleteMapping("/{categoryId}")  // Fixed HTTP method
+    public String deleteCategory(@PathVariable Long categoryId) {
+        categoryService.deleteCatageory(categoryId);  // Fixed method name
+        return "redirect:/categories";
+    }
+}

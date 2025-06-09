@@ -1,0 +1,29 @@
+package com.example.demo;
+@Component
+public class MainServ {
+	private PwdSer passwd;
+	@Autowired
+	public MainServ(PwdSer passwd, IuserDao user, Emailser eml) {
+		super();
+		this.passwd = passwd;
+		this.user = user;
+		this.eml = eml;
+	}
+
+
+
+
+	private IuserDao user;
+	private Emailser eml;
+	
+	
+
+	
+	public  void mainRegister(String name ,String email,String paswd)
+	{
+		String pass=passwd.encry(pwd);
+		boolean use=user.userName(name,gender);
+		boolean sent=eml.send(from, to, sub);
+	}
+
+}

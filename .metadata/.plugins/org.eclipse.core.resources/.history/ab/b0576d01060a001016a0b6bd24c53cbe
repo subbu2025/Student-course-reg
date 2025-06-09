@@ -1,0 +1,21 @@
+server.port=8080  
+
+spring.application.name=api-gateway  # Name of the API Gateway service
+
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/  # Eureka Server URL
+
+spring.cloud.gateway.routes[0].id=product-service
+spring.cloud.gateway.routes[0].uri=lb://PRODUCT-SERVICE
+spring.cloud.gateway.routes[0].predicates[0]=Path=/products/**
+
+spring.cloud.gateway.routes[1].id=category-service
+spring.cloud.gateway.routes[1].uri=lb://CATEGORY-SERVICE
+spring.cloud.gateway.routes[1].predicates[0]=Path=/categories/**
+
+spring.cloud.gateway.routes[2].id=price-service
+spring.cloud.gateway.routes[2].uri=lb://PRICE-SERVICE
+spring.cloud.gateway.routes[2].predicates[0]=Path=/prices/**
+
+spring.cloud.gateway.routes[3].id=inventory-service
+spring.cloud.gateway.routes[3].uri=lb://INVENTORY-SERVICE
+spring.cloud.gateway.routes[3].predicates[0]=Path=/inventory/**

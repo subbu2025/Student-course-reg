@@ -1,0 +1,26 @@
+package com.example.demo;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Service {
+	public Service()
+	{
+		System.out.print("Service :: constructor");
+	}
+	private demodao ksr;
+	
+	
+	
+	
+	public void setKsr(demodao ksr) {
+		this.ksr = ksr;
+	}
+	public void getNumber(int i)
+	{
+		String name =ksr.findNameById(int i);
+	}
+		System.out.print(name);
+	
+
+}

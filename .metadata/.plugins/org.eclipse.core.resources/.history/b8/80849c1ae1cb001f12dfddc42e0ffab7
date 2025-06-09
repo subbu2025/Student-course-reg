@@ -1,0 +1,6 @@
+package com.example.demo;
+
+public interface personrepo extends crudRepository<person ,int>{
+	
+
+}

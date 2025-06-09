@@ -1,0 +1,10 @@
+package com.KSR.IT.demo;
+
+public interface ServiceInterf {
+ public String Upsert(Student stu);
+ public Integer getStuById(Integer sid);
+ public Integer updateById(Integer sid);
+ public Integer deleteById(Integer sid);
+ 
+ 
+}

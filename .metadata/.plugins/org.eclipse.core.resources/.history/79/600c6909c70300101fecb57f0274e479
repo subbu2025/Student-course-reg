@@ -1,0 +1,26 @@
+package com.example.demo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class Cntroler {
+	@GetMapping("welcome")
+	public ModelAndView getMesage()
+	{
+		ModelAndView mv =new ModelAndView ();
+		mv.addObject("msg","welcome to my page");
+		mv.setViewName("wel");
+		return mv;
+		
+	}
+	@GetMapping("me")
+	 public String getDet(Model mod)
+	 {
+		 mod.addAttribute("me", "this method countain Model Interface");
+		 return "index";
+	 }
+
+}

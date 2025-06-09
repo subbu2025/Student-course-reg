@@ -1,0 +1,57 @@
+package com.example.demo;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class R204 {
+	@Id
+	private  Integer no;
+	public R204(Integer no, String name, String deg, double sal, String village) {
+		super();
+		this.no = no;
+		this.name = name;
+		this.deg = deg;
+		this.sal = sal;
+		this.village = village;
+	}
+	@Override
+	public String toString() {
+		return "r204 [no=" + no + ", name=" + name + ", deg=" + deg + ", sal=" + sal + ", village=" + village + "]";
+	}
+	public void setNo(Integer no) {
+		this.no = no;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setDeg(String deg) {
+		this.deg = deg;
+	}
+	public void setSal(double sal) {
+		this.sal = sal;
+	}
+	public void setVillage(String village) {
+		this.village = village;
+	}
+	public Integer getNo() {
+		return no;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getDeg() {
+		return deg;
+	}
+	public double getSal() {
+		return sal;
+	}
+	public String getVillage() {
+		return village;
+	}
+	private  String name;
+	private  String deg;
+	private  double sal;
+	private  String village;
+
+}

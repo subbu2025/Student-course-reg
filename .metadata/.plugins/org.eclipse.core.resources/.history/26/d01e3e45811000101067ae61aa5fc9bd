@@ -1,0 +1,5 @@
+package com.KSR.IT.demo;
+
+public interface ServiceInterf {
+
+}

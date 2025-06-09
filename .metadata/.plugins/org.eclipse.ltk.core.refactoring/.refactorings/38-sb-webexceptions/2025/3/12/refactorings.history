@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.example.demo.Controler&apos; to &apos;Cntroler&apos;&#x0D;&#x0A;- Original project: &apos;38-sb-webexceptions&apos;&#x0D;&#x0A;- Original element: &apos;com.example.demo.Controler&apos;&#x0D;&#x0A;- Renamed element: &apos;com.example.demo.Cntroler&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Controler&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.demo{Controler.java[Controler" matchStrategy="1" name="Cntroler" qualified="false" references="true" similarDeclarations="false" stamp="1742279878337" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,18 @@
+package com.example.demo;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class PwdSer {
+	public PwdSer()
+	{
+		System.out.println("passwd :: constr");
+	}
+	public String encry(String pwd)
+	{
+		System.out.println("passwd created");
+	return pwd;
+
+}
+}
+

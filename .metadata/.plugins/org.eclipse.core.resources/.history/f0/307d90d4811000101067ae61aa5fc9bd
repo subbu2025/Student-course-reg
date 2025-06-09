@@ -1,0 +1,44 @@
+package com.KSR.IT.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.Optional;
+
+@Service
+public class ServiceImplcls implements ServiceInterf {
+
+    @Autowired
+    private Srepo serv;
+
+    @Override
+    public String upsert(Student stu) {
+        serv.save(stu);
+        return "Value Updated";
+    }
+
+    @Override
+    public Student getStuById(Integer sid) {
+        Optional<Student> studentOptional = serv.findById(sid);
+        return studentOptional.orElse(null); // Returns null if student is not found
+    }
+
+    @Override
+    public String updateById(Student stu) {
+        if (serv.existsById(stu.getId())) {
+            serv.save(stu);
+            return "Student updated successfully";
+        } else {
+            return "Student not found";
+        }
+    }
+
+    @Override
+    public String deleteById(Integer sid) {
+        if (serv.existsById(sid)) {
+            serv.deleteById(sid);
+            return "Student deleted successfully";
+        } else {
+            return "Student not found";
+        }
+    }
+}

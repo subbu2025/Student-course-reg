@@ -1,0 +1,44 @@
+package com.KSR.IT.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+@RestController
+public class Studentres {
+	@Autowired
+	private Serv stu;
+	@PostMapping("/det")
+	public String details(@RequestBody Student student)
+	{
+		stu.upsert(student);
+		return " new details returned";
+	}
+	@GetMapping("/det/{sid}")
+	public String detailById(Integer sid)
+	{
+		stu.getStuById(sid);
+		return  " detailed given ";
+		
+	}
+	@PutMapping("update/{id}")
+	public String update (@RequestBody Student student)
+	{
+		stu.upsert(student);
+		return "details updated";
+	}
+	
+	@DeleteMapping("/delete/{id}")
+	
+	public String deleteDet(Integer sid)
+	{
+		stu.deleteById(sid);
+		
+		return "deleted value";
+	}
+	
+
+}
