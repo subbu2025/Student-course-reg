@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>My Courses</title></head>
+<body>
+<h2>My Registered Courses</h2>
+<table border="1">
+    <tr>
+        <th>Title</th><th>Description</th><th>Credits</th><th>Registered Date</th><th>Action</th>
+    </tr>
+    <tr th:each="reg : ${registrations}">
+        <td th:text="${reg.course.title}"></td>
+        <td th:text="${reg.course.description}"></td>
+        <td th:text="${reg.course.credits}"></td>
+        <td th:text="${reg.registrationDate}"></td>
+        <td>
+            <a th:href="@{/registration/deregister(studentId=${reg.student.id}, courseId=${reg.course.id})}">
+                Deregister
+            </a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
