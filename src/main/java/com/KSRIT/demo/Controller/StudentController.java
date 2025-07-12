@@ -19,21 +19,26 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
+    // ✅ Show registration form
     @GetMapping("/register")
     public ModelAndView showRegistrationForm() {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("student/register");
+        mv.addObject("student", new Student());  // ✅ Required for Thymeleaf form binding
         return mv;
     }
 
+    // ✅ Handle registration
     @PostMapping("/register")
     public ModelAndView registerStudent(@ModelAttribute Student student) {
         studentService.saveStudent(student);
         ModelAndView mv = new ModelAndView();
         mv.setViewName("student/login");
+        mv.addObject("message", "Registration successful. Please log in.");
         return mv;
     }
 
+    // ✅ Show login form
     @GetMapping("/login")
     public ModelAndView showLoginForm() {
         ModelAndView mv = new ModelAndView();
@@ -41,6 +46,7 @@ public class StudentController {
         return mv;
     }
 
+    // ✅ Handle login
     @PostMapping("/login")
     public ModelAndView loginStudent(@RequestParam String email,
                                      @RequestParam String password) {

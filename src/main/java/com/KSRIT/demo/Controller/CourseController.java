@@ -29,7 +29,7 @@ public class CourseController {
         mv.addObject("courses", courses);
         return mv;
     }
-
+ 
     @GetMapping("/add")
     public ModelAndView addCourseForm() {
         ModelAndView mv = new ModelAndView("course/add");
